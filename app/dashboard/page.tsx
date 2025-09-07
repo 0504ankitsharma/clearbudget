@@ -310,8 +310,8 @@ export default function Dashboard() {
       {/* Modern Header */}
       <header className="bg-white/80 backdrop-blur-lg shadow-lg border-b border-white/20 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <div className="flex items-center space-x-3 mb-4 sm:mb-0">
               <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center transform rotate-6 hover:rotate-0 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">💰</span>
               </div>
@@ -323,7 +323,7 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden sm:block px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full border border-green-200">
+              <div className="hidden md:block px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full border border-green-200">
                 <div className="text-sm font-medium text-green-800">
                   {user?.firstName ? `👋 Hey ${user.firstName}!` : '👋 Welcome!'}
                 </div>
@@ -377,7 +377,7 @@ export default function Dashboard() {
             <div className="space-y-6">
               <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-6">
                 <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold text-black mb-4">
+                <h3 className="text-lg font-bold text-black">
                   📏 Quick Actions
                 </h3>
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -437,8 +437,8 @@ export default function Dashboard() {
                 )}
               </div>
               
-              <div className="mt-8">
-                  <h2 className="text-xl font-bold text-black">
+              <div className="mt-8 bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-6">
+                  <h2 className="text-xl font-bold text-black mb-4">
                     📈 Quick Stats
                   </h2>
                 <div className="space-y-3">
@@ -559,7 +559,7 @@ export default function Dashboard() {
                               </div>
                             )}
                             <div 
-                              className={`max-w-xs md:max-w-md px-4 py-3 rounded-2xl shadow-sm ${
+                              className={`max-w-[calc(100%-4rem)] sm:max-w-xs md:max-w-md px-4 py-3 rounded-2xl shadow-sm ${
                                 msg.sender === 'user' 
                                   ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-br-md shadow-lg' 
                                   : 'bg-white border border-gray-200 text-gray-800 rounded-bl-md'
@@ -613,7 +613,7 @@ export default function Dashboard() {
                       <button
                         type="submit"
                         disabled={loading || !message.trim()}
-                        className={`group relative px-6 py-3 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-105 flex items-center space-x-2 ${
+                        className={`group relative px-4 py-3 sm:px-6 sm:py-3 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-105 flex items-center space-x-2 ${
                           loading || !message.trim()
                             ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                             : 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg hover:shadow-xl'
@@ -627,7 +627,7 @@ export default function Dashboard() {
                         ) : (
                           <>
                             <span>🚀</span>
-                            <span>Send</span>
+                            <span className="hidden sm:inline">Send</span>
                           </>
                         )}
                       </button>
@@ -644,7 +644,7 @@ export default function Dashboard() {
               {view === 'summary' && (
                 <div className="p-6">
                   {/* Header with Export and Add buttons */}
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex flex-col sm:flex-row items-center justify-between mb-6 space-y-4 sm:space-y-0">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
                         <span className="text-2xl">📈</span>
@@ -657,10 +657,10 @@ export default function Dashboard() {
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-3">
+                    <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 w-full sm:w-auto">
                       <button
                         onClick={() => setShowAddTransaction(true)}
-                        className="group flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                        className="group flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full"
                       >
                         <span className="text-sm">➕</span>
                         <span>Add Transaction</span>
@@ -669,7 +669,7 @@ export default function Dashboard() {
                       <button
                         onClick={handleExportToExcel}
                         disabled={exportLoading || transactions.length === 0}
-                        className={`group flex items-center space-x-2 px-4 py-2 rounded-xl font-medium shadow-lg transition-all duration-200 transform hover:scale-105 ${
+                        className={`group flex items-center justify-center space-x-2 px-4 py-2 rounded-xl font-medium shadow-lg transition-all duration-200 transform hover:scale-105 w-full ${
                           exportLoading || transactions.length === 0
                             ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                             : 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:shadow-xl'
@@ -691,7 +691,7 @@ export default function Dashboard() {
                   </div>
                   
                   {/* Quick Stats */}
-                  <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
                       <div className="flex items-center justify-between">
                         <div>
@@ -763,8 +763,8 @@ export default function Dashboard() {
                           <div className="divide-y divide-gray-100">
                             {dayTransactions.map((transaction) => (
                               <div key={transaction.id} className="px-6 py-4 hover:bg-gray-50/50 transition-colors duration-200 group">
-                                <div className="flex items-center justify-between">
-                                  <div className="flex items-center space-x-4 flex-1">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                                  <div className="flex items-center space-x-4 flex-1 mb-2 sm:mb-0">
                                     <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                                       transaction.type === 'income' 
                                         ? 'bg-green-100 text-green-600' 
@@ -790,7 +790,7 @@ export default function Dashboard() {
                                     </div>
                                   </div>
                                   
-                                  <div className="flex items-center space-x-3">
+                                  <div className="flex items-center space-x-3 mt-2 sm:mt-0">
                                     <p className={`text-lg font-bold ${
                                       transaction.type === 'income' ? 'text-green-600' : 'text-red-600'
                                     }`}>
@@ -839,17 +839,18 @@ export default function Dashboard() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h3 className="font-medium mb-4 text-black">Spending by Category</h3>
-                      <div className="h-64">
-                        <Pie data={chartData} options={{ maintainAspectRatio: false }} />
+                      <div className="h-64 w-full">
+                        <Pie data={chartData} options={{ maintainAspectRatio: false, responsive: true }} />
                       </div>
                     </div>
                     <div>
                       <h3 className="font-medium mb-4 text-black">Category Breakdown</h3>
-                      <div className="h-64">
+                      <div className="h-64 w-full">
                         <Bar 
                           data={chartData} 
                           options={{ 
                             maintainAspectRatio: false,
+                            responsive: true,
                             scales: {
                               y: {
                                 beginAtZero: true
@@ -870,10 +871,10 @@ export default function Dashboard() {
                       <span className="text-2xl">💡</span>
                     </div>
                     <div>
-                      <h2 className="text-2xl font-bold text-black">
+                      <h2 className="text-xl sm:text-2xl font-bold text-black">
                         Smart Financial Tips
                       </h2>
-                      <p className="text-sm text-gray-500">Personalized insights based on your spending patterns</p>
+                      <p className="text-xs sm:text-sm text-gray-500">Personalized insights based on your spending patterns</p>
                     </div>
                   </div>
                   
@@ -881,9 +882,9 @@ export default function Dashboard() {
                     {tips.length > 0 ? (
                       tips.map((tip, index) => {
                         // Extract emoji and text from tip
-                        const emojiMatch = tip.match(/^([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]+)/u);
+                        const emojiMatch = tip.match(/^([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F800}-\u{1F8FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]+)/u);
                         const emoji = emojiMatch ? emojiMatch[1] : '💡';
-                        const text = tip.replace(/^[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\s]+/u, '');
+                        const text = tip.replace(/^[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F800}-\u{1F8FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\s]+/u, '');
                         
                         return (
                           <div key={index} className="group relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 p-6 rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
@@ -910,10 +911,10 @@ export default function Dashboard() {
                         <p className="text-gray-600 max-w-md mx-auto mb-6">
                           Start logging your expenses and income to get personalized financial insights and tips!
                         </p>
-                        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg">
+                        <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg w-full max-w-sm">
                           <span>💬</span>
                           <span>Start by adding a transaction in the chat</span>
-                        </div>
+                        </button>
                       </div>
                     )}
                   </div>
@@ -1016,17 +1017,17 @@ export default function Dashboard() {
                   />
                 </div>
                 
-                <div className="flex items-center space-x-3 pt-4">
+                <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 pt-4">
                   <button
                     type="submit"
-                    className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 px-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                    className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 px-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full"
                   >
                     Save Changes
                   </button>
                   <button
                     type="button"
                     onClick={() => setEditingTransaction(null)}
-                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors duration-200"
+                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors duration-200 w-full"
                   >
                     Cancel
                   </button>
@@ -1124,17 +1125,17 @@ export default function Dashboard() {
                   />
                 </div>
                 
-                <div className="flex items-center space-x-3 pt-4">
+                <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 pt-4">
                   <button
                     type="submit"
-                    className="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                    className="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full"
                   >
                     Add Transaction
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowAddTransaction(false)}
-                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors duration-200"
+                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors duration-200 w-full"
                   >
                     Cancel
                   </button>

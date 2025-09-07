@@ -33,11 +33,11 @@ export default function SignInPage() {
                 </div>
               </div>
             </div>
-            <h1 className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+            <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
               Welcome Back!
             </h1>
             <h2 className="text-xl font-bold text-gray-800 mb-2">ClearBudget</h2>
-            <p className="text-gray-600 max-w-sm mx-auto">
+            <p className="text-sm sm:text-base text-gray-600 max-w-sm mx-auto px-4">
               🚀 Ready to continue your financial journey? Sign in to access your personalized dashboard!
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function SignInPage() {
           
           {/* Footer Links */}
           <div className="mt-8 text-center space-y-4">
-            <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm text-gray-500">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Secure & Private</span>
@@ -88,7 +88,7 @@ export default function SignInPage() {
               </div>
             </div>
             
-            <div className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
+            <div className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100 mx-4">
               <p className="text-sm text-gray-600">
                 New to ClearBudget?{' '}
                 <Link 

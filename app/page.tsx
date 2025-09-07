@@ -19,8 +19,8 @@ export default function Home() {
       </div>
 
       <header className="relative z-10 bg-white/80 backdrop-blur-lg shadow-lg border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
+          <div className="flex items-center space-x-2 mb-4 sm:mb-0">
             <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-300">
               <span className="text-white font-bold text-xl">💰</span>
             </div>
@@ -73,16 +73,16 @@ export default function Home() {
                 </span>
               </h1>
               
-              <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-600 leading-relaxed">
+              <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg text-gray-600 leading-relaxed">
                 🎓 Perfect for students! Track expenses, manage budgets, and get AI-powered insights 
                 <span className="font-semibold text-indigo-600">all in one beautiful app</span> 
                 that actually makes finance fun.
               </p>
               
-              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
                 <Link 
                   href="/sign-up" 
-                  className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden min-w-[200px]"
+                  className="group relative inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-base sm:text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 >
                   <span className="relative z-10 flex items-center">
                     🚀 Start Free Today
@@ -92,7 +92,7 @@ export default function Home() {
                 
                 <Link 
                   href="#features" 
-                  className="group inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-700 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-indigo-300 transform hover:scale-105 transition-all duration-300 min-w-[200px]"
+                  className="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-white/80 backdrop-blur-lg text-gray-700 text-base sm:text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-indigo-300 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                 >
                   <span className="flex items-center">
                     💡 See Features
@@ -100,7 +100,7 @@ export default function Home() {
                 </Link>
               </div>
               
-              <div className="mt-12 flex justify-center space-x-8 text-sm text-gray-500">
+              <div className="mt-12 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500 px-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span>100% Free for Students</span>
@@ -192,15 +192,15 @@ export default function Home() {
       <div className="relative py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">
             Ready to take control of your finances? 💪
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-base sm:text-xl text-white/90 mb-8">
             Join thousands of students who are already managing their money like pros!
           </p>
           <Link 
             href="/sign-up" 
-            className="inline-flex items-center px-8 py-4 bg-white text-gray-900 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-white text-gray-900 text-base sm:text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
           >
             🎆 Start Your Financial Journey
           </Link>
@@ -209,8 +209,8 @@ export default function Home() {
 
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div className="flex items-center space-x-2 mb-6 md:mb-0">
               <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">💰</span>
               </div>

@@ -316,4 +316,3 @@ If this project helped you, please consider:
   <h3>Made with ❤️ for students, by <a href="https://tinyurl.com/iamankitsharma">Ankit Sharma</a></h3>
   <p>© 2025 ClearBudget. Making finance fun since 2025.</p>
 </div>
-#
